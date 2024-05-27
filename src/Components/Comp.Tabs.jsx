@@ -1,4 +1,8 @@
+/*
+    currently 2 lang muna yung data
+*/
 import { useState } from "react";
+import CompTabItem from "./Comp.TabItem";
 
 const CompTabs = () => {
   const [data, setData] = useState([
@@ -26,7 +30,7 @@ const CompTabs = () => {
   };
 
   return (
-    <section>
+    <section style={{ width: "100%" }}>
       <menu role="tablist">
         {data.map((tab) => (
           <li
@@ -40,9 +44,7 @@ const CompTabs = () => {
         ))}
       </menu>
       <div className="window" role="tabpanel">
-        <div className="window-body">
-          <p>the tab content</p>
-        </div>
+        <CompTabItem />
       </div>
     </section>
   );

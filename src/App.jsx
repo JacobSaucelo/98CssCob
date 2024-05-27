@@ -2,7 +2,16 @@ import CompTabs from "./Components/Comp.Tabs";
 
 function App() {
   return (
-    <>
+    <section
+      style={{
+        maxWidth: "900px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        margin: "auto",
+        padding: "1rem",
+      }}
+    >
       <button>testing btn</button>
 
       <div className="window" style={{ width: "300px" }}>
@@ -24,7 +33,7 @@ function App() {
       </div>
 
       <CompTabs />
-    </>
+    </section>
   );
 }
 
