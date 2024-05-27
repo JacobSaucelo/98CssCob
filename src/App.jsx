@@ -1,8 +1,6 @@
-import { useState } from "react";
+import CompTabs from "./Components/Comp.Tabs";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <button>testing btn</button>
@@ -24,6 +22,8 @@ function App() {
           {/* <p>There&apos;s so much room for activities!</p> */}
         </div>
       </div>
+
+      <CompTabs />
     </>
   );
 }
