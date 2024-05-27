@@ -2,3 +2,7 @@ body {
   background: #dfdfdf;
   /* min-height: 100vh; */
 }
+
+* {
+  user-select: none;
+}

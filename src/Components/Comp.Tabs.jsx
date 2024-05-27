@@ -1,18 +1,46 @@
-import React from "react";
+import { useState } from "react";
 
 const CompTabs = () => {
+  const [data, setData] = useState([
+    {
+      id: 1,
+      isSelected: true,
+      value: "Desktop",
+    },
+    {
+      id: 2,
+      isSelected: false,
+      value: "My Computer",
+    },
+  ]);
+
+  const handleSelected = (currentId) => {
+    const updatedData = data.map((tab) => {
+      if (tab.id == currentId) {
+        return { ...tab, isSelected: true };
+      }
+      return { ...tab, isSelected: false };
+    });
+
+    setData(updatedData);
+  };
+
   return (
     <section>
       <menu role="tablist">
-        <li role="tab" aria-selected="true">
-          <a href="#tabs">Desktop</a>
-        </li>
-        <li role="tab">
-          <a href="#tabs">My computer</a>
-        </li>
+        {data.map((tab) => (
+          <li
+            role="tab"
+            aria-selected={tab.isSelected}
+            key={tab.id}
+            onClick={() => handleSelected(tab.id)}
+          >
+            <a href="#">{tab.value}</a>
+          </li>
+        ))}
       </menu>
-      <div class="window" role="tabpanel">
-        <div class="window-body">
+      <div className="window" role="tabpanel">
+        <div className="window-body">
           <p>the tab content</p>
         </div>
       </div>
