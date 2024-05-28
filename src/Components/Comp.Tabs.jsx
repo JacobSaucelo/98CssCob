@@ -39,12 +39,17 @@ const CompTabs = () => {
             key={tab.id}
             onClick={() => handleSelected(tab.id)}
           >
-            <a href="#">{tab.value}</a>
+            <div style={{ padding: "0.3rem" }}>{tab.value}</div>
+            {/* <a href="#">{tab.value}</a> */}
           </li>
         ))}
       </menu>
       <div className="window" role="tabpanel">
-        <CompTabItem />
+        {data.map((content) => {
+          if (content.isSelected) {
+            return <CompTabItem key={content.id} value={content.value} />;
+          }
+        })}
       </div>
     </section>
   );
